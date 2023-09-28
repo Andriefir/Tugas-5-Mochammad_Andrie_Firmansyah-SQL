@@ -1,6 +1,6 @@
-Soal 1 : Buat Table & Database
+-- Soal 1 : Buat Table & Database
 
-// Table Books
+-- Table Books
 CREATE TABLE books (
     Id INT PRIMARY KEY,
     JudulBuku VARCHAR(255),
@@ -16,7 +16,7 @@ VALUES
     (1, 'Building microservices', 'Sam Newman', 2014, 'O''Reilly Media', '2023-09-18', '2023-09-18');
 
 
-// Table Category
+-- Table Category
 CREATE TABLE Category (
     Id INT PRIMARY KEY,
     NamaCategory VARCHAR(255),
@@ -32,9 +32,9 @@ VALUES
 
 
 
-Soal 2 : Tambahkan Data Baru
+-- Soal 2 : Tambahkan Data Baru
 
-// Table Books
+-- Table Books
 INSERT INTO books (Id, JudulBuku, Pengarang, TahunTerbit, Penerbit, TanggalDibuat, TanggalDiupdate)
 VALUES
     (2, 'Clean Code', 'Robert C. Martin', 2008, 'Prentice Hall', '2023-09-18', '2023-09-18'),
@@ -48,7 +48,7 @@ VALUES
     (10, 'The Mythical Man-Month', 'Frederick Brooks', 1975, 'Addison-Wesley', '2023-09-18', '2023-09-18');
 
 
-// Table Category
+-- Table Category
 INSERT INTO Category (Id, NamaCategory, TanggalDibuat, TanggalDiupdate)
 VALUES
     (2, 'Fiksi', '2023-09-18', '2023-09-18'),
@@ -65,9 +65,9 @@ VALUES
 
 
 
-Soal 3 : Tampilkan Semua Data
+-- Soal 3 : Tampilkan Semua Data
 
-// Table Books & Category
+-- Table Books & Category
 -- Menampikan semua data dari table "books"
 SELECT * FROM books;
 
@@ -78,9 +78,9 @@ SELECT * FROM category;
 
 
 
-Soal 4 : Update Data Tertentu
+-- Soal 4 : Update Data Tertentu
 
-// Table Books
+--  Table Books
 UPDATE books
 SET
     JudulBuku = 'Building Microservices: Designing Fine-Grained Systems 1st',
@@ -97,9 +97,9 @@ WHERE
 
 
 
-Soal 5 : Hapus Data Tertentu
+-- Soal 5 : Hapus Data Tertentu
 
-// Table Books & Category
+-- Table Books & Category
 -- Menghapus data dengan ID 10 dari tabel "books"
 DELETE FROM books
 WHERE Id = 10;
@@ -112,9 +112,9 @@ WHERE Id = 10;
 
 
 
-Soal 6 : Tampilkan Data Buku Tertentu
+-- Soal 6 : Tampilkan Data Buku Tertentu
 
-// Table Books
+-- Table Books
 SELECT JudulBuku
 FROM books
 WHERE Penerbit = 'Addison-Wesley';
@@ -131,9 +131,9 @@ WHERE JudulBuku LIKE '%design%';
 
 
 
-Soal 7 : Buatlah Tabel Book Category
+-- Soal 7 : Buatlah Tabel Book Category
 
-// Table Book Categories
+--  Table Book Categories
 CREATE TABLE book_categories (
     Id INT PRIMARY KEY,
     IdCategory INT,
@@ -152,9 +152,9 @@ VALUES
 
 
 
-Soal 8 : Tambahkan Data Baru Pada Tabel Book Category
+-- Soal 8 : Tambahkan Data Baru Pada Tabel Book Category
 
-// Table Book Categories
+-- Table Book Categories
 INSERT INTO book_categories (Id, IdCategory, IdBook, TanggalDibuat, TanggalDiupdate)
 VALUES
     (2, 5, 3, '2023-09-18', '2023-09-18'),
@@ -164,9 +164,9 @@ VALUES
 
 
 
-Soal 9 : Tampilkan Data Relasi Antar Tabel
+-- Soal 9 : Tampilkan Data Relasi Antar Tabel
 
-// Table Books dan Category
+--  Table Books dan Category
 SELECT *
 FROM books
 INNER JOIN category ON category.id = books.Id;
@@ -175,8 +175,8 @@ INNER JOIN category ON category.id = books.Id;
 
 
 
-Soal 10 : Ubah Struktur Tabel
+-- Soal 10 : Ubah Struktur Tabel
 
-// Table Books
+--  Table Books
 ALTER TABLE books
 ADD JumlahHalaman INT;
